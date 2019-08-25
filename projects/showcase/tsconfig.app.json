@@ -2,7 +2,8 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/app",
-    "types": []
+    "types": [],
+    "target": "es5"
   },
   "files": [
     "src/main.ts",
@@ -12,6 +13,6 @@
     "src/**/*.d.ts"
   ],
   "angularCompilerOptions": {
-    "enableIvy": true
+    "enableIvy": false
   }
 }

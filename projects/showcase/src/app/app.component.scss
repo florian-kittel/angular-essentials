@@ -1,0 +1,18 @@
+.logo {
+    display: flex;
+    align-items: center;
+    padding-bottom: 40px;
+    line-height: 24px;
+
+    img {
+      background: rgb(100,100,100);
+      border-radius: 3px;
+    }
+
+    span {
+      font-weight: bold;
+      display: inline-block;
+      padding: 0 5px;
+      font-size: 14px;
+    }
+}

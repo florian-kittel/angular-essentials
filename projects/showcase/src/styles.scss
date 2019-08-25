@@ -1,1 +1,124 @@
 /* You can add global styles to this file, and also import other style files */
+// @import "./scss/_variables";
+// @import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/_functions";
+@import "~bootstrap/scss/_variables";
+@import "~bootstrap/scss/_mixins";
+@import "~bootstrap/scss/_utilities";
+
+$color-initial: #fff !default;
+$color-primary: #0078D4 !default;
+$color-secondary: #606c76 !default;
+$color-tertiary: #f4f5f6 !default;
+$color-quaternary: #d1d1d1 !default;
+$color-quinary: #e1e1e1 !default;
+
+$color-input: #fff;
+$border-color: $color-quaternary;
+$border-radius: 0.25rem;
+$border-size: 1px;
+$input-font-size: 0.875rem;
+$input-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+$color-background: rgb(10, 8, 8);
+$color-background-line: rgb(216, 216, 216);
+$color-background-line-small: rgb(228, 228, 228);
+
+// @import "~milligram/src/milligram";
+
+@import "./scss/form";
+
+// reset
+a:focus,
+a:active,
+button,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+select::-moz-focus-inner,
+input[type="file"]>input[type="button"]::-moz-focus-inner {
+  outline: none !important;
+}
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+select:focus::-ms-value {
+  background-color: $input-bg;
+  color: $input-color;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  background-color: rgb(242, 242, 242);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 16px;
+  color: $color-secondary;
+  font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: .01em;
+  line-height: 1.6;
+}
+
+.stage {
+  // background-image: linear-gradient($color-background-line 2px, transparent 2px), linear-gradient(90deg, $color-background-line 2px, transparent 2px), linear-gradient($color-background-line-small 1px, transparent 1px), linear-gradient(90deg, $color-background-line-small 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px, 8px 8px, 8px 8px;
+  background-position: -1px -1px, -1px -1px, 0px 0px, 0px 0px;
+}
+
+main.container {
+  padding: 0;
+}
+
+.button {
+  height: 3.2rem;
+  line-height: 3.2rem;
+  padding: 0 1.6rem;
+}
+
+.button-black {
+  background-color: black;
+  border-color: black;
+}
+
+.button-secondary {
+  background-color: $color-secondary;
+  border-color: $color-secondary;
+}
+
+.button-small {
+  font-size: .8rem;
+  height: 2.8rem;
+  line-height: 2.8rem;
+  padding: 0 1.5rem;
+}
+
+.button-large {
+  font-size: 1.4rem;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  padding: 0 2rem;
+}
+
+nav {
+  line-height: 24px;
+
+  span {
+    display: inline-block;
+    line-height: 24px;
+    height: 24px;
+  }
+}
