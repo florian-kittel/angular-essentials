@@ -1,69 +1,27 @@
-import { Component, OnInit, Input, forwardRef, HostBinding } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, OnInit, Input, HostBinding, Optional, Self } from '@angular/core';
+import { NgControl } from '@angular/forms';
+import { BaseForm } from '../base-from.class';
 
 @Component({
   selector: 'nge-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => InputComponent),
-    multi: true
-  }]
 })
-export class InputComponent implements OnInit, ControlValueAccessor {
-  val = '';
+export class InputComponent extends BaseForm implements OnInit {
   @HostBinding('attr.id') externalId = '';
   @HostBinding('class') class = 'nge-input';
 
-  set value(val) {  // this value is updated by programmatic changes if( val !== undefined && this.val !== val){
-    this.val = val;
-    this.onChange(val);
-    this.onTouch(val);
-  }
-
-  public isFocused = false;
-
-
   @Input() type = 'text';
-  // @Input() value = '';
-  @Input() placeholder = '';
-  @Input() label = '';
 
-  public id = 'i';
-
-  constructor() {
-    this.id = this.externalId || this.id + Math.random().toString().replace('0.', '');
+  constructor(@Optional() @Self() public ngControl: NgControl) {
+    super(ngControl);
   }
 
   ngOnInit() {
+    if (this.externalId) {
+      this.id = this.externalId;
+    }
   }
 
-  onChange: any = () => { };
-  onTouch: any = () => { };
-  onFocus: any = () => {
-    this.isFocused = true;
-  }
-
-  onBlur: any = () => {
-    this.onTouch(this.value);
-    this.isFocused = false;
-  }
-
-  writeValue(value: any) {
-    this.value = value;
-    this.onChange(this.value);
-    this.onTouch(this.value);
-  }
-
-  registerOnChange(fn: any) {
-    this.onChange = fn;
-  }
-
-  registerOnTouched(fn: any) {
-    this.onTouch = fn;
-  }
-
-  setDisabledState?(isDisabled: boolean): void;
 
 }

@@ -13,8 +13,8 @@ export class FormPageComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: [''],
+      firstName: [{ value: '', disabled: true }, Validators.required],
+      lastName: ['', Validators.required],
     });
   }
 

@@ -1,6 +1,6 @@
-<div class="d-flex align-items-center mb-2">
+<div class="d-flex align-items-center mb-2" [class.has-error]="hasErrors" [class.is-disabled]="disabled">
   <label [for]="id"
-         *ngIf="label">{{label}}</label>
+         *ngIf="label">{{label}}<small *ngIf="required" style="color: red"> *</small></label>
   <div class="w-100 position-relative">
     <input [type]="type"
            [id]="id"
@@ -9,10 +9,14 @@
            (ngModelChange)="onChange($event); onTouch($event)"
            (focus)="onFocus($event)"
            (blur)="onBlur($event)"
+           [disabled]="disabled"
            [value]="value"
+
            [placeholder]="placeholder">
     <div class="input-line"
-         [class.input-line--active]="isFocused"></div>
-    <div class="input-error">Error Message</div>
+         [class.input-line--active]="hasErrors"></div>
+    <div class="input-error" *ngIf="hasErrors && errorMessages.length > 0">
+      {{errorMessages}}
+    </div>
   </div>
 </div>
