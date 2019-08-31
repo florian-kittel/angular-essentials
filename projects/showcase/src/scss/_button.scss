@@ -1,0 +1,192 @@
+// Button
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@mixin createButton($map, $label) {
+
+  @each $design,
+  $value in $map {
+    #{$label}-#{$design} {
+      color: #fff;
+      background-color: $value;
+      border-color: $value;
+
+      &:focus,
+      &:hover {
+        background-color: $color-secondary;
+        border-color: $color-secondary;
+      }
+
+      &[disabled] {
+        cursor: default;
+        opacity: .5;
+
+        &:focus,
+        &:hover {
+          background-color: $value;
+          border-color: $value;
+        }
+      }
+
+      &.button-outlined {
+        color: $value;
+        background-color: transparent;
+
+        &:focus,
+        &:hover {
+          color: $color-secondary;
+          background-color: transparent;
+        }
+
+        &[disabled] {
+
+          &:focus,
+          &:hover {
+            color: $value;
+            border-color: transparent;
+            border-color: $value;
+          }
+        }
+      }
+
+      &.button-clear {
+        background-color: transparent;
+        border-color: transparent;
+        color: $value;
+        box-shadow: none;
+
+        &:focus,
+        &:hover {
+          color: $color-secondary;
+          background-color: transparent;
+        }
+
+        &[disabled] {
+
+          &:focus,
+          &:hover {
+            color: $value;
+            border-color: transparent;
+          }
+        }
+      }
+
+
+    }
+  }
+}
+
+$colorMap: ("primary": $color-primary,
+  "warn": $color-warn,
+  "alert": $color-alert,
+  "error": $color-error,
+  "success": $color-success,
+);
+
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+
+  &.button {
+    background-color: $color-base;
+    border-radius: $border-radius;
+    border: $border-size solid $color-base;
+    box-shadow: $box-shadow;
+
+    color: #fff;
+    cursor: pointer;
+
+    display: inline-block;
+    font-size: $input-font-size;
+    font-weight: 700;
+    height: 2rem;
+    letter-spacing: 1px;
+    line-height: 1;
+    padding: 0 1rem;
+
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+
+    &:focus,
+    &:hover {
+      background-color: $color-secondary;
+      border-color: $color-secondary;
+      color: $color-initial;
+      outline: 0;
+    }
+
+    &[disabled] {
+      cursor: default;
+      opacity: .5;
+
+      &:focus,
+      &:hover {
+        background-color: $color-base;
+        border-color: $color-base;
+      }
+    }
+
+
+    &.button-outlined {
+      background-color: transparent;
+      border-color: $color-base;
+      color: $color-base;
+
+      &:focus,
+      &:hover {
+        background-color: transparent;
+        border-color: $color-secondary;
+        color: $color-secondary;
+      }
+
+      &[disabled] {
+
+        &:focus,
+        &:hover {
+          color: $color-base;
+          border-color: $color-base;
+        }
+      }
+    }
+
+    &.button-clear {
+      background-color: transparent;
+      border-color: transparent;
+      color: $color-base;
+      box-shadow: none;
+
+      &:focus,
+      &:hover {
+        color: $color-secondary;
+        background-color: transparent;
+        border-color: transparent;
+      }
+
+
+      &[disabled] {
+
+        &:focus,
+        &:hover {
+          color: $color-base;
+          border-color: transparent;
+        }
+      }
+    }
+
+    @include createButton($colorMap, "&.button");
+
+    &.button-small {
+      font-size: .75rem;
+      height: 1.5rem;
+      padding: 0 .5rem;
+    }
+
+    &.button-large {
+      font-size: 1.25rem;
+      height: 3rem;
+    }
+  }
+}

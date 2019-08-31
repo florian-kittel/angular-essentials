@@ -1,0 +1,13 @@
+<div class="d-flex align-items-center mb-2">
+  <label [for]="id"
+         *ngIf="label">{{label}}</label>
+  <select [id]="id"
+          required>
+    <option value=""
+            disabled
+            selected
+            *ngIf="placeholder">{{placeholder}}</option>
+    <option [value]="option.value"
+            *ngFor="let option of options">{{option.label}}</option>
+  </select>
+</div>

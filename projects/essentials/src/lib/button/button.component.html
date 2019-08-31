@@ -1,0 +1,19 @@
+<div class="mb-2">
+  <button [type]="type"
+          class="button"
+          [class.button-default]="design === 'default'"
+          [class.button-outlined]="design === 'outlined'"
+          [class.button-clear]="design === 'clear'"
+          [class.button-primary]="color === 'primary'"
+          [class.button-error]="color === 'error'"
+          [class.button-alert]="color === 'alert'"
+          [class.button-warn]="color === 'warn'"
+          [class.button-success]="color === 'success'"
+          [class.button-black]="color === 'black'"
+          [class.button-white]="color === 'white'"
+          [class.button-small]="size === 'small'"
+          [class.button-large]="size === 'large'"
+          [disabled]="disabled">
+    <ng-content></ng-content>
+  </button>
+</div>

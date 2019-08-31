@@ -1,0 +1,18 @@
+<div class="d-flex align-items-center mb-2">
+  <label [for]="id"
+         *ngIf="label">{{label}}</label>
+  <div class="w-100 position-relative">
+    <input [type]="type"
+           [id]="id"
+           name="test"
+           [ngModel]="value"
+           (ngModelChange)="onChange($event); onTouch($event)"
+           (focus)="onFocus($event)"
+           (blur)="onBlur($event)"
+           [value]="value"
+           [placeholder]="placeholder">
+    <div class="input-line"
+         [class.input-line--active]="isFocused"></div>
+    <div class="input-error">Error Message</div>
+  </div>
+</div>

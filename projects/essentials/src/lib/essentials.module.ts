@@ -1,12 +1,22 @@
 import { NgModule } from '@angular/core';
-import { EssentialsComponent } from './essentials.component';
 
 
+import { ButtonModule } from './button/button.module';
+import { InputModule } from './input/input.module';
+import { SelectModule } from './select/select.module';
 
 @NgModule({
-  declarations: [EssentialsComponent],
-  imports: [
+  declarations: [
   ],
-  exports: [EssentialsComponent]
+  imports: [
+    ButtonModule,
+    InputModule,
+    SelectModule,
+  ],
+  exports: [
+    ButtonModule,
+    InputModule,
+    SelectModule,
+  ]
 })
 export class EssentialsModule { }

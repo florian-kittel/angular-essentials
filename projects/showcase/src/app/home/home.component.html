@@ -1,0 +1,212 @@
+<div class="row">
+  <div class="column">
+    <h4>Buttons</h4>
+    <div class="mb-3">
+      <nge-button>Normal Button</nge-button>
+    </div>
+    <div class="mb-3">
+      <nge-button design="secondary">Secondary Button</nge-button>
+    </div>
+    <div class="mb-3">
+      <nge-button design="tertiary">Tertiary Button</nge-button>
+    </div>
+    <div class="mb-3">
+      <nge-button [disabled]="true">Disabled Button</nge-button>
+    </div>
+    <div class="mb-3">
+      <nge-button color="secondary">Secondary color</nge-button>
+    </div>
+    <div class="mb-3">
+      <nge-button color="black">Black color</nge-button>
+    </div>
+    <div class="mb-3">
+      <nge-button size="small">Button small</nge-button>
+    </div>
+    <div class="mb-3">
+      <nge-button size="large">Button large</nge-button>
+    </div>
+
+
+    <h4>Checkbox</h4>
+    <div class="mb-3">
+      <input type="checkbox"
+             id="checkbox_1"
+             name="checkbox"
+             value="checkbox_1">
+      <label for="checkbox_1">Checkbox</label>
+    </div>
+    <div class="mb-3">
+      <input type="checkbox"
+             id="checkbox_2"
+             name="checkbox"
+             value="checkbox_2"
+             checked>
+      <label for="checkbox_2">Checkbox checked</label>
+    </div>
+    <div class="mb-3">
+      <input type="checkbox"
+             id="checkbox_3"
+             name="checkbox"
+             value="checkbox_3"
+             disabled>
+      <label for="checkbox_3">Checkbox disabled</label>
+    </div>
+
+    <h4>Radio button</h4>
+    <div class="mb-3">
+      <div>
+        <input type="radio"
+               id="radiobutton_value_1"
+               name="radiobutton_1"
+               value="radiobutton_value_1">
+        <label for="radiobutton_value_1">Radio Option 1</label>
+      </div>
+      <div>
+        <input type="radio"
+               id="radiobutton_value_2"
+               name="radiobutton_1"
+               value="radiobutton_value_2">
+        <label for="radiobutton_value_2">Radio Option 2</label>
+      </div>
+    </div>
+    <div class="mb-3">
+      <div>
+        <input type="radio"
+               id="radiobutton_value_3"
+               name="radiobutton_2"
+               value="radiobutton_value_3"
+               disabled>
+        <label for="radiobutton_value_3">Radio Option 1</label>
+      </div>
+      <div>
+        <input type="radio"
+               id="radiobutton_value_4"
+               name="radiobutton_2"
+               value="radiobutton_value_4"
+               disabled
+               checked>
+        <label for="radiobutton_value_4">Radio Option 2</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <h4>Calendar Date Picker</h4>
+    <div class="mb-3">
+      <label for="date_0">Date input</label>
+      <input type="date"
+             id="date_0"
+             name="date_0">
+    </div>
+    <div class="mb-3">
+      <label for="date_1">Date input limited</label>
+      <input type="date"
+             id="date_1"
+             name="date_1"
+             value="2018-12-22"
+             min="2018-12-05"
+             max="2018-12-31">
+    </div>
+    <div class="mb-3">
+      <label for="date_2">Date input disabled</label>
+      <input type="date"
+             id="date_2"
+             name="date_2"
+             value="2018-07-22"
+             min="2018-01-01"
+             max="2018-12-31"
+             disabled>
+    </div>
+    <div class="mb-3">
+      <label for="date_3">Date input readonly</label>
+      <input type="date"
+             id="date_3"
+             name="date_3"
+             value="2018-07-22"
+             readonly>
+    </div>
+    <div class="mb-3">
+      <label for="date_4">Date time input</label>
+      <input type="datetime-local"
+             id="date_4"
+             name="date_3"
+             value="2018-06-12T19:30"
+             min="2018-06-07T00:00"
+             max="2018-06-14T00:00">
+    </div>
+    <div class="mb-3">
+      <label for="date_5">Time input</label>
+      <input type="time"
+             id="date_5"
+             name="date_3"
+             value="10:30"
+             min="09:00"
+             max="18:00">
+    </div>
+  </div>
+
+  <div class="column">
+    <h4>Combo box</h4>
+    <div class="mb-3">
+      <label for="pet-select">Choose a pet:</label>
+
+      <select id="pet-select">
+        <option value="">--Please choose an option--</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="hamster">Hamster</option>
+        <option value="parrot">Parrot</option>
+        <option value="spider">Spider</option>
+        <option value="goldfish">Goldfish</option>
+      </select>
+    </div>
+
+    <div>
+      <select name="choice"
+              disabled>
+        <option value="first">First Value</option>
+        <option value="second"
+                selected>Second Value</option>
+        <option value="third">Third Value</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="myBrowser">Choose a browser from this list:</label>
+      <input list="browsers"
+             id="myBrowser"
+             name="myBrowser" />
+      <datalist id="browsers">
+        <option value="Chrome">
+        <option value="Firefox">
+        <option value="Internet Explorer">
+        <option value="Opera">
+        <option value="Safari">
+        <option value="Microsoft Edge">
+      </datalist>
+    </div>
+  </div>
+
+  <div class="column">
+    <h4>Textbox</h4>
+
+    <div class="mb-3">
+      <nge-input placeholder="Enter some text"
+                 label="Input text"></nge-input>
+      <nge-input placeholder="Enter some text"
+                 label="Input text"></nge-input>
+    </div>
+    <div class="mb-3">
+      <label>Input text</label>
+      <input type="text"
+             placeholder="Placeholder">
+    </div>
+    <div class="mb-3">
+      <label>Input password</label>
+      <input type="password"
+             placeholder="Enter password"
+             value="12345">
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,24 @@
+<p>form-page works!</p>
+<form [formGroup]="form">
+
+
+
+    <nge-input placeholder="Enter some text"
+               label="First Name"
+               formControlName="firstName"></nge-input>
+
+
+
+  <label>
+    Last Name:
+    <input type="text"
+           formControlName="lastName">
+  </label>
+
+</form>
+<pre>
+{{form.value  | json}}
+</pre>
+<pre>
+Valid: {{form.valid  | json}}
+</pre>

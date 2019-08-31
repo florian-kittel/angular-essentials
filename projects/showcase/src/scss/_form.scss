@@ -1,0 +1,155 @@
+// Form
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='url'],
+textarea,
+select {
+  appearance: none;
+  background-color: $color-input;
+  border: $border-size solid $border-color;
+  border-radius: $border-radius;
+  box-sizing: inherit;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 .5rem;
+  width: 100%;
+  font-size: $input-font-size;
+  box-shadow: $box-shadow;
+
+  &:focus {
+    // border-color: $color-primary;
+    outline: none;
+  }
+}
+
+select {
+  padding-right: 2.5rem;
+  vertical-align: middle;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23d1d1d1' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e");
+  background-size: 8px 10px;
+  background-position: right .75rem center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%230078D4' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e");
+  }
+
+  &:invalid {
+    color: gray;
+  }
+
+  option[value=""][disabled] {
+    display: none;
+  }
+
+  [disabled] {
+    color: gray;
+  }
+
+  option:disabled {
+    color: #000;
+    font-weight: bold;
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+.lt-ie10 select {
+  background-image: none;
+}
+
+textarea {
+  min-height: 6.5rem;
+}
+
+label,
+legend {
+  display: block;
+  font-size: $input-font-size;
+  line-height: 1rem;
+  font-weight: 400;
+  margin: 0 .5rem;
+  max-width: 8rem;
+  width: 8rem;
+  min-width: 8rem;
+  text-align: right;
+
+  // white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+fieldset {
+  border-width: 0;
+  padding: 0;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  display: inline;
+}
+
+.label-inline {
+  display: inline-block;
+  font-weight: normal;
+  margin-left: .5rem;
+}
+
+.input-line {
+  display: block;
+  border-bottom: $border-size*2 solid $color-primary;
+  border-radius: $border-radius;
+  position: absolute;
+  width: 0;
+  top: 30px;
+  transition: width 200ms ease-out;
+
+  &--active {
+    // border-bottom-width: 1px;
+    width: 100%;
+  }
+}
+
+.input-error {
+  color: $color-error;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1rem;
+  padding: .25rem .5rem;
+}
+
+
+.nge-input,
+.nge-select,
+.nge-checkbox {
+
+  &.ng-invalid.ng-touched {
+
+    input,
+    textarea,
+    select {
+      &.ng-touched {
+        //  border-color: $border-color-error;
+      }
+    }
+
+    .input-line {
+      width: 100%;
+      border-color: $border-color-error;
+    }
+  }
+
+}

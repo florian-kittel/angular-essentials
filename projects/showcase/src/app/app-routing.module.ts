@@ -16,6 +16,14 @@ const routes: Routes = [
     path: 'input',
     loadChildren: () => import('./input-page/input-page.module').then(mod => mod.InputPageModule)
   },
+  {
+    path: 'button',
+    loadChildren: () => import('./button-page/button-page.module').then(mod => mod.ButtonPageModule)
+  },
+  {
+    path: 'form',
+    loadChildren: () => import('./form-page/form-page.module').then(mod => mod.FormPageModule)
+  },
 ];
 
 @NgModule({
