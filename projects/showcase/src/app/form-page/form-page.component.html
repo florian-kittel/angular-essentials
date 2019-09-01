@@ -8,7 +8,13 @@
              label="Last Name"
              formControlName="lastName"
              [errorMessages]="errorMessages.lastName"></nge-input>
-  <nge-button class="mr-2" (click)="onSubmit()">Submit Form</nge-button>
+  <nge-input placeholder="Enter some text"
+             label="Info"
+             [readonly]="true"
+             formControlName="info"
+             [errorMessages]="errorMessages.info"></nge-input>
+  <nge-button class="mr-2"
+              (click)="onSubmit()">Submit Form</nge-button>
 </form>
 <pre>
 {{form.value  | json}}

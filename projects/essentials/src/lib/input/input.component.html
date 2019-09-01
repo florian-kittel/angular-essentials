@@ -1,6 +1,7 @@
-<div class="d-flex align-items-center mb-2"
+<div class="d-sm-flex align-items-center mb-2"
      [class.has-error]="hasErrors"
-     [class.is-disabled]="disabled">
+     [class.is-disabled]="disabled"
+     [class.is-readonly]="readonly">
 
   <label [for]="id"
          *ngIf="label">{{label}}<small *ngIf="required"
@@ -12,6 +13,7 @@
            [id]="id"
            name="test"
            [ngModel]="value"
+           [readonly]="readonly"
            (ngModelChange)="onChange($event); onTouch($event)"
            (focus)="onFocus($event)"
            (blur)="onBlur($event)"

@@ -22,7 +22,6 @@ export class FormPageComponent implements OnInit {
       required: 'Last name is required',
       minlength: 'Name must be at least 4 characters long.'
     },
-
   };
 
   constructor(private fb: FormBuilder) {
@@ -35,6 +34,7 @@ export class FormPageComponent implements OnInit {
         null,
         { validators: Validators.compose([Validators.required, Validators.minLength(4)]), updateOn: 'blur' }
       ],
+      info: ['This is a read-only message']
     });
   }
 

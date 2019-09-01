@@ -6,6 +6,7 @@ export abstract class BaseForm implements ControlValueAccessor, DoCheck {
   @Input() errorMessages: { [key: string]: string } = {};
   @Input() placeholder = '';
   @Input() label = '';
+  @Input() readonly = false;
 
   // tslint:disable-next-line: no-output-native
   @Output() change = new EventEmitter();
