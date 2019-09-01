@@ -9,7 +9,6 @@ export class ErrorMessagesComponent implements OnInit {
 
   @Input() errorMessages;
   @Input() set errors(errors) {
-    console.log(errors);
     if (errors) {
       this.error = Object.keys(errors)[0] || null;
     } else {
@@ -22,11 +21,9 @@ export class ErrorMessagesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.errorMessages);
   }
 
   getMessage() {
-    console.log(this.error, this.errorMessages, this.errorMessages[this.error]);
     if (this.error) {
       return this.errorMessages[this.error] || '';
     }
