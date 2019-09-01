@@ -1,8 +1,14 @@
-<div class="d-flex align-items-center mb-2" [class.has-error]="hasErrors" [class.is-disabled]="disabled">
+<div class="d-flex align-items-center mb-2"
+     [class.has-error]="hasErrors"
+     [class.is-disabled]="disabled">
+
   <label [for]="id"
-         *ngIf="label">{{label}}<small *ngIf="required" style="color: red"> *</small></label>
+         *ngIf="label">{{label}}<small *ngIf="required"
+           style="color: red"> *</small></label>
+
   <div class="w-100 position-relative">
     <input [type]="type"
+           autocomplete="off"
            [id]="id"
            name="test"
            [ngModel]="value"
@@ -11,12 +17,14 @@
            (blur)="onBlur($event)"
            [disabled]="disabled"
            [value]="value"
-
            [placeholder]="placeholder">
+
     <div class="input-line"
          [class.input-line--active]="hasErrors"></div>
-    <div class="input-error" *ngIf="hasErrors && errorMessages.length > 0">
-      {{errorMessages}}
-    </div>
+
+    <nge-error-messages [errorMessages]="errorMessages"
+                        [errors]="ngControl.control.errors"
+                        *ngIf="hasErrors && errorMessages !== {}"></nge-error-messages>
+
   </div>
 </div>

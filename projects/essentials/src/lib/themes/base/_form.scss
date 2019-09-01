@@ -23,7 +23,7 @@ select {
   box-shadow: $box-shadow;
 
   &:focus {
-    // border-color: $color-primary;
+    border-color: $color-primary;
     outline: none;
   }
 }
@@ -148,7 +148,10 @@ input[type='radio'] {
 
 .has-error {
   margin-bottom: 1.5rem !important;
-
+  .input-line {
+    width: 100%;
+    border-color: $border-color-error;
+  }
 }
 
 
@@ -167,8 +170,8 @@ input[type='radio'] {
     }
 
     .input-line {
-      width: 100%;
-      border-color: $border-color-error;
+      // width: 100%;
+      // border-color: $border-color-error;
     }
   }
 

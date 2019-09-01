@@ -1,6 +1,14 @@
-<form [formGroup]="form">
-  <nge-input placeholder="Enter some text" label="First Name" formControlName="firstName"></nge-input>
-  <nge-input placeholder="Enter some text" label="Last Name" formControlName="lastName"></nge-input>
+<form [formGroup]="form"
+      autocomplete="off">
+  <nge-input placeholder="Enter some text"
+             label="First Name"
+             formControlName="firstName"
+             [errorMessages]="errorMessages.firstName"></nge-input>
+  <nge-input placeholder="Enter some text"
+             label="Last Name"
+             formControlName="lastName"
+             [errorMessages]="errorMessages.lastName"></nge-input>
+  <nge-button class="mr-2" (click)="onSubmit()">Submit Form</nge-button>
 </form>
 <pre>
 {{form.value  | json}}

@@ -7,6 +7,7 @@ export abstract class BaseForm implements ControlValueAccessor, DoCheck {
   @Input() placeholder = '';
   @Input() label = '';
 
+  // tslint:disable-next-line: no-output-native
   @Output() change = new EventEmitter();
 
   public id = 'i' + Math.random().toString().replace('0.', '');
@@ -16,6 +17,7 @@ export abstract class BaseForm implements ControlValueAccessor, DoCheck {
   public required = false;
   public isFocused = false;
   public validators = null;
+  public errorCheckOnFirstFocus = false;
 
   constructor(@Optional() @Self() public ngControl: NgControl) {
     if (this.ngControl != null) {
@@ -30,17 +32,8 @@ export abstract class BaseForm implements ControlValueAccessor, DoCheck {
     }
   }
 
-  get hasErrors() {
-    return (this.ngControl &&
-      this.ngControl.control &&
-      this.ngControl.control.dirty &&
-      this.ngControl.control.touched &&
-      this.ngControl.control.errors !== null
-    );
-  }
-
-  onChange = (_value: any) => { };
-  onTouched = (_value: any) => { };
+  onChange = (value: any) => { };
+  onTouched = (value: any) => { };
 
   writeValue(value: any): void {
     this.value = value;
@@ -63,15 +56,34 @@ export abstract class BaseForm implements ControlValueAccessor, DoCheck {
 
   onFocus: any = () => {
     this.isFocused = true;
+    if (this.ngControl.control.dirty || this.ngControl.control.touched) {
+      this.errorCheckOnFirstFocus = true;
+    }
+  }
+
+  onTouch: any = (value) => {
+    this.onTouched(value);
   }
 
   onBlur: any = () => {
     this.onTouched(this.value);
     this.isFocused = false;
+    this.errorCheckOnFirstFocus = true;
     if (this.ngControl) {
       this.ngControl.control.markAllAsTouched();
       this.ngControl.control.markAsDirty();
     }
+  }
+
+  get hasErrors() {
+    return (
+      (!this.isFocused || this.errorCheckOnFirstFocus) &&
+      this.ngControl &&
+      this.ngControl.control &&
+      this.ngControl.control.invalid &&
+      (this.ngControl.control.dirty || this.ngControl.control.touched) &&
+      this.ngControl.control.errors !== null
+    );
   }
 
 }
