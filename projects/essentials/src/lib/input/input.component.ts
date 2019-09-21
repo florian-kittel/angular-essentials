@@ -9,7 +9,9 @@ import { BaseForm } from '../base-from.class';
 })
 export class InputComponent extends BaseForm implements OnInit {
   @HostBinding('attr.id') externalId = '';
-  @HostBinding('class') class = 'nge-input';
+
+  // tslint:disable-next-line: no-input-rename
+  @HostBinding('class.nge-input') @Input('class') classList = 'nge-input';
 
   @Input() type = 'text';
 
@@ -21,6 +23,8 @@ export class InputComponent extends BaseForm implements OnInit {
     if (this.externalId) {
       this.id = this.externalId;
     }
+
+    this.classList = `${this.classList} nge-input`;
   }
 
 

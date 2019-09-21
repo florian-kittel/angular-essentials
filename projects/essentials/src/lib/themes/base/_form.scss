@@ -99,7 +99,7 @@ legend {
 }
 
 @media (min-width: 576px) {
-  form:not(.label-top) {
+  //form:not(.label-top) {
 
     label,
     legend {
@@ -113,7 +113,7 @@ legend {
 
       text-align: right;
     }
-  }
+//  }
 }
 
 fieldset {
