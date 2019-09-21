@@ -1,0 +1,27 @@
+<h1>Login-form examples</h1>
+<div style="max-width: 320px">
+  <form [formGroup]="form"
+        class="label-top"
+        autocomplete="off">
+    <nge-input placeholder="Enter some text"
+               label="E-Mail"
+               formControlName="email"
+               [errorMessages]="errorMessages.email"></nge-input>
+    <nge-input placeholder="Enter some text"
+               label="Password"
+               type="password"
+               formControlName="password"
+               [errorMessages]="errorMessages.password"></nge-input>
+    <div class="d-flex justify-content-between">
+      <div class="order-sm-1">
+        <nge-button class="mr-2"
+                    (click)="onSubmit()">Login</nge-button>
+      </div>
+      <div class="order-sm-0">
+        <nge-button class="mr-2"
+                    design="clear"
+                    (click)="onSubmit()">Password lost</nge-button>
+      </div>
+    </div>
+  </form>
+</div>
