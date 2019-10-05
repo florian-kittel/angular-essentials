@@ -24,8 +24,7 @@ export class InputComponent extends BaseForm implements OnInit {
       this.id = this.externalId;
     }
 
-    this.classList = `${this.classList} nge-input`;
+    this.classList = `${this.classList}`;
   }
-
 
 }
