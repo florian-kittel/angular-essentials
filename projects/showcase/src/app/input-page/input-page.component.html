@@ -1,11 +1,63 @@
+<h1>Input</h1>
+
+<p>
+  Default input field as separte block-element.
+</p>
+
+<h4>Preview</h4>
+<form [formGroup]="form"
+      class="docs__preview">
+  <nge-input placeholder="This is a placeholder"
+             label="Label"
+             form
+             formControlName="myInput"
+             [errorMessages]="errorMessages.myInput"></nge-input>
+</form>
+
+<table class="docs__table">
+  <tr>
+    <th>Property</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>errorMessages</td>
+    <td>Object</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>placeholder</td>
+    <td>String</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>label</td>
+    <td>String</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>type</td>
+    <td>String</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>readonly</td>
+    <td>Boolean</td>
+    <td></td>
+  </tr>
+</table>
+
+<h4>Examples</h4>
 <nge-input placeholder="Enter some text"
            label="Input text"></nge-input>
 
 <nge-input placeholder="Enter some text"
-           label="Das ist ein langer Label"></nge-input>
+           design=""
+           label="First name"></nge-input>
 
 <nge-input placeholder="Enter some text"
-           label="Input text"></nge-input>
+           design=""
+           label="Input with longer label"></nge-input>
 
 <nge-select placeholder="Please select"
             label="Select"
