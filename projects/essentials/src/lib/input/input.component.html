@@ -1,30 +1,36 @@
-<div class="d-sm-flex align-items-center mb-2"
+<div class="nge-input d-sm-flex align-items-start"
      [class.has-error]="hasErrors"
      [class.is-disabled]="disabled"
      [class.is-readonly]="readonly">
 
-  <label [for]="id"
-         *ngIf="label">{{label}}<small *ngIf="required"
-           style="color: red"> *</small></label>
+  <label class="nge-input__label"
+         [for]="id"
+         *ngIf="label">
+    <span [title]="label">{{label}}</span>
+    <small *ngIf="required"
+           style="color: red"> *</small>
+  </label>
 
-  <div class="w-100 position-relative">
-    <input [type]="type"
-           autocomplete="off"
-           [id]="id"
-           name="test"
-           [ngModel]="value"
-           [readonly]="readonly"
-           (ngModelChange)="onChange($event); onTouch($event)"
-           (focus)="onFocus($event)"
+  <div class="nge-input__container position-relative">
+    <input class="nge-input__input"
            (blur)="onBlur($event)"
+           (focus)="onFocus($event)"
+           (ngModelChange)="onChange($event); onTouch($event)"
            [disabled]="disabled"
+           [id]="id"
+           [ngModel]="value"
+           [placeholder]="placeholder"
+           [readonly]="readonly"
+           [type]="type"
            [value]="value"
-           [placeholder]="placeholder">
+           autocomplete="off"
+           name="test">
 
-    <div class="input-line"
+    <div class="nge-input__input-line input-line"
          [class.input-line--active]="hasErrors"></div>
 
-    <nge-error-messages [errorMessages]="errorMessages"
+    <nge-error-messages class="nge-input__error-message"
+                        [errorMessages]="errorMessages"
                         [errors]="ngControl.control.errors"
                         *ngIf="hasErrors && errorMessages !== {}"></nge-error-messages>
 

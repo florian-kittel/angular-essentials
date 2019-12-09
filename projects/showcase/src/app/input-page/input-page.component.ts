@@ -1,5 +1,5 @@
-import { Component, forwardRef, HostBinding, Input, OnInit } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-input-page',
@@ -7,6 +7,17 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   styleUrls: ['./input-page.component.scss']
 })
 export class InputPageComponent implements OnInit {
+
+  public form: FormGroup;
+
+  public errorMessages = {
+    myInput:
+    {
+      required: 'This field is required.',
+      minlength: 'The value must be at least 4 characters long.'
+    }
+  };
+
   public options = [
     {
       label: 'Angular.io',
@@ -18,7 +29,14 @@ export class InputPageComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      myInput: [
+        { value: null, disabled: false },
+        { validators: Validators.compose([Validators.required, Validators.minLength(4)]), updateOn: 'blur' }
+      ]
+    });
+  }
 
   ngOnInit() {
   }

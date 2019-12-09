@@ -1,22 +1,37 @@
-<div class="logo">
-  <img width="24"
-       alt="Angular Essentials Logo"
-       src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDI1MCAyNTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1MCAyNTA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+DQoJLnN0MHtmaWxsOiNGRkZGRkY7fQ0KCS5zdDF7b3BhY2l0eTowLjk7fQ0KPC9zdHlsZT4NCjxnPg0KCTxnPg0KCQk8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjEyNSwxNTMuNCAxMDAuMywxNTMuNCA4OC42LDE4Mi42IDg4LjYsMTgyLjYgNjYuOSwxODIuNiA2Ni44LDE4Mi42IDEyNSw1Mi4xIDEyNSw1Mi4yIDEyNSw1Mi4yIA0KCQkJMTI1LDMwIDEyNSwzMCAzMS45LDYzLjIgNDYuMSwxODYuMyAxMjUsMjMwIDEyNSwyMzAgMTI1LDE1My40IAkJIi8+DQoJCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTA4LDEzNS40IDEyNSwxMzUuNCAxMjUsMTM1LjQgMTI1LDk0LjUgCQkiLz4NCgk8L2c+DQoJPGcgY2xhc3M9InN0MSI+DQoJCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDE1My40IDE0OS43LDE1My40IDE2MS40LDE4Mi42IDE2MS40LDE4Mi42IDE4My4xLDE4Mi42IDE4My4yLDE4Mi42IDEyNSw1Mi4xIDEyNSw1Mi4yIDEyNSw1Mi4yIA0KCQkJMTI1LDMwIDEyNSwzMCAyMTguMSw2My4yIDIwMy45LDE4Ni4zIDEyNSwyMzAgMTI1LDIzMCAxMjUsMTUzLjQgCQkiLz4NCgkJPHBvbHlnb24gY2xhc3M9InN0MCIgcG9pbnRzPSIxNDIsMTM1LjQgMTI1LDEzNS40IDEyNSwxMzUuNCAxMjUsOTQuNSAJCSIvPg0KCTwvZz4NCjwvZz4NCjwvc3ZnPg" />
-  <span>Essentials</span>
+<div class="app-shell">
 
-  <span [routerLink]="['/home']"
-        routerLinkActive="active">Home</span>
-  <span [routerLink]="['/input']"
-        routerLinkActive="active">Input</span>
-  <span [routerLink]="['/button']"
-        routerLinkActive="active">Button</span>
-  <span [routerLink]="['/form']"
-        routerLinkActive="active">From</span>
-  <span [routerLink]="['/examples/login-forms']"
-        routerLinkActive="active">Login</span>
+  <div class="app-shell__navigation">
+    <div class="app-shell__navigation__logo">
+      <img width="24"
+           alt="Angular Essentials Logo"
+           src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDI1MCAyNTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI1MCAyNTA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+DQoJLnN0MHtmaWxsOiNGRkZGRkY7fQ0KCS5zdDF7b3BhY2l0eTowLjk7fQ0KPC9zdHlsZT4NCjxnPg0KCTxnPg0KCQk8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjEyNSwxNTMuNCAxMDAuMywxNTMuNCA4OC42LDE4Mi42IDg4LjYsMTgyLjYgNjYuOSwxODIuNiA2Ni44LDE4Mi42IDEyNSw1Mi4xIDEyNSw1Mi4yIDEyNSw1Mi4yIA0KCQkJMTI1LDMwIDEyNSwzMCAzMS45LDYzLjIgNDYuMSwxODYuMyAxMjUsMjMwIDEyNSwyMzAgMTI1LDE1My40IAkJIi8+DQoJCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTA4LDEzNS40IDEyNSwxMzUuNCAxMjUsMTM1LjQgMTI1LDk0LjUgCQkiLz4NCgk8L2c+DQoJPGcgY2xhc3M9InN0MSI+DQoJCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDE1My40IDE0OS43LDE1My40IDE2MS40LDE4Mi42IDE2MS40LDE4Mi42IDE4My4xLDE4Mi42IDE4My4yLDE4Mi42IDEyNSw1Mi4xIDEyNSw1Mi4yIDEyNSw1Mi4yIA0KCQkJMTI1LDMwIDEyNSwzMCAyMTguMSw2My4yIDIwMy45LDE4Ni4zIDEyNSwyMzAgMTI1LDIzMCAxMjUsMTUzLjQgCQkiLz4NCgkJPHBvbHlnb24gY2xhc3M9InN0MCIgcG9pbnRzPSIxNDIsMTM1LjQgMTI1LDEzNS40IDEyNSwxMzUuNCAxMjUsOTQuNSAJCSIvPg0KCTwvZz4NCjwvZz4NCjwvc3ZnPg" />
+      <span>Essentials</span>
+    </div>
 
+    <div style="padding: 0 1rem;">
+      <nge-input placeholder="Search"></nge-input>
+    </div>
+
+    <ul class="app-shell__navigation__list">
+      <li [routerLink]="['/home']"
+          routerLinkActive="active">Home</li>
+      <li [routerLink]="['/input']"
+          routerLinkActive="active">Input</li>
+      <li [routerLink]="['/button']"
+          routerLinkActive="active">Button</li>
+      <li [routerLink]="['/form']"
+          routerLinkActive="active">Form</li>
+      <li [routerLink]="['/examples/login-forms']"
+          routerLinkActive="active">Login</li>
+    </ul>
+
+
+  </div>
+
+  <main class="app-shell__main">
+    <div>
+
+      <router-outlet></router-outlet>
+    </div>
+  </main>
 </div>
-
-<main class="container">
-  <router-outlet></router-outlet>
-</main>

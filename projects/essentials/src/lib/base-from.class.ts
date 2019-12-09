@@ -57,7 +57,7 @@ export abstract class BaseForm implements ControlValueAccessor, DoCheck {
 
   onFocus: any = () => {
     this.isFocused = true;
-    if (this.ngControl.control.dirty || this.ngControl.control.touched) {
+    if (this.ngControl && (this.ngControl.control.dirty || this.ngControl.control.touched)) {
       this.errorCheckOnFirstFocus = true;
     }
   }
