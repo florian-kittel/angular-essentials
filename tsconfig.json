@@ -19,10 +19,10 @@
       "dom"
     ],
     "paths": {
-      "essentials": [
-        "dist/essentials"
+      "@angular-essentials/core": [
+        "projects/essentials"
       ],
-      "essentials/*": [
+      "@angular-essentials/core/*": [
         "dist/essentials/*"
       ]
     }
