@@ -13,7 +13,7 @@ Run `ng build essentials` to build the project. The build artifacts will be stor
 
 ## Publishing
 
-After building your library with `ng build essentials`, go to the dist folder `cd dist/essentials` and run `npm publish`.
+After building your library with `ng build essentials`, go to the dist folder `cd dist/core-ui` and run `npm publish`.
 
 ## Running unit tests
 

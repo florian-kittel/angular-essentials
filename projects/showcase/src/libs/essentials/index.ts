@@ -1,1 +1,1 @@
-export * from '../../../../essentials/src/public-api';
+export * from '../../../../core-ui/src/public-api';

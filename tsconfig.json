@@ -20,10 +20,10 @@
     ],
     "paths": {
       "@angular-essentials/core": [
-        "projects/essentials"
+        "projects/core-ui"
       ],
       "@angular-essentials/core/*": [
-        "dist/essentials/*"
+        "dist/core-ui/*"
       ]
     }
   },

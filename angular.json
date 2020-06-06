@@ -127,31 +127,31 @@
     },
     "essentials": {
       "projectType": "library",
-      "root": "projects/essentials",
-      "sourceRoot": "projects/essentials/src",
+      "root": "projects/core-ui",
+      "sourceRoot": "projects/core-ui/src",
       "prefix": "nge",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/essentials/tsconfig.lib.json",
-            "project": "projects/essentials/ng-package.json"
+            "tsConfig": "projects/core-ui/tsconfig.lib.json",
+            "project": "projects/core-ui/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/essentials/src/test.ts",
-            "tsConfig": "projects/essentials/tsconfig.spec.json",
-            "karmaConfig": "projects/essentials/karma.conf.js"
+            "main": "projects/core-ui/src/test.ts",
+            "tsConfig": "projects/core-ui/tsconfig.spec.json",
+            "karmaConfig": "projects/core-ui/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/essentials/tsconfig.lib.json",
-              "projects/essentials/tsconfig.spec.json"
+              "projects/core-ui/tsconfig.lib.json",
+              "projects/core-ui/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
