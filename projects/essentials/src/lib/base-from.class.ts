@@ -1,6 +1,7 @@
-import { DoCheck, Input, Output, Optional, Self, EventEmitter } from '@angular/core';
+import { DoCheck, Input, Output, Optional, Self, EventEmitter, Directive } from '@angular/core';
 import { ControlValueAccessor, NgControl, FormControl } from '@angular/forms';
 
+@Directive()
 export abstract class BaseForm implements ControlValueAccessor, DoCheck {
 
   @Input() errorMessages: { [key: string]: string } = {};

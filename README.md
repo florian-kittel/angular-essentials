@@ -1,6 +1,8 @@
-# AngularEssentials
+# AngularEssentialsUI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0-rc.0.
+This project is a set of basic ui components based on Angular. They are not using material design oder bootstrap ui. Underlying are Bootstraps helper classes, but not ui classes.
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
 
 ## Development server
 
