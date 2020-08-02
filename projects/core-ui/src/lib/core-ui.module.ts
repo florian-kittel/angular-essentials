@@ -5,6 +5,7 @@ import { ButtonModule } from './button/button.module';
 import { InputModule } from './input/input.module';
 import { SelectModule } from './select/select.module';
 import { ErrorMessagesModule } from './error-messages/error-messages.module';
+import { TextareaModule } from './textarea/textarea.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ErrorMessagesModule } from './error-messages/error-messages.module';
     InputModule,
     SelectModule,
     ErrorMessagesModule,
+    TextareaModule,
   ],
   exports: [
     ButtonModule,
