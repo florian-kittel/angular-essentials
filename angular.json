@@ -45,7 +45,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -125,7 +124,7 @@
         }
       }
     },
-    "essentials": {
+    "core-ui": {
       "projectType": "library",
       "root": "projects/core-ui",
       "sourceRoot": "projects/core-ui/src",
@@ -136,6 +135,11 @@
           "options": {
             "tsConfig": "projects/core-ui/tsconfig.lib.json",
             "project": "projects/core-ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/core-ui/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
