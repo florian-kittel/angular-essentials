@@ -1,23 +1,31 @@
-/*
-  This is a "Solution Style" tsconfig.json file, and is used by editors and TypeScript’s language server to improve development experience.
-  It is not intended to be used to perform a compilation.
-
-  To learn more about this file see: https://angular.io/config/solution-tsconfig.
-*/
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./projects/showcase/tsconfig.app.json"
-    },
-    {
-      "path": "./projects/showcase/tsconfig.spec.json"
-    },
-    {
-      "path": "./projects/core-ui/tsconfig.lib.json"
-    },
-    {
-      "path": "./projects/core-ui/tsconfig.spec.json"
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "core-ui": [
+        "dist/core-ui/core-ui",
+        "dist/core-ui"
+      ],
+      "@angular-essentials/core": [
+        "projects/core-ui"
+      ],
+      "@angular-essentials/core/*": [
+        "dist/core-ui/*"
+      ]
     }
-]
+  }
 }
